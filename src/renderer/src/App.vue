@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import TitleBar from './components/TitleBar.vue'
 import Versions from './components/Versions.vue'
 </script>
 
 <template>
+  <TitleBar></TitleBar>
   <Versions></Versions>
 
   <svg class="hero-logo" viewBox="0 0 900 300">

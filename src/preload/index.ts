@@ -1,8 +1,13 @@
 import { electronAPI } from '@electron-toolkit/preload'
+import { windowSizeCtrl } from '@shared/windowControls'
 import { contextBridge } from 'electron'
 
 // Custom APIs for renderer
-const api = {}
+const api = {
+  minimize: () => windowSizeCtrl.minimize(),
+  maximize: () => windowSizeCtrl.maximize(),
+  close: () => windowSizeCtrl.close()
+}
 
 // Use `contextBridge` APIs to expose Electron APIs to
 // renderer only if context isolation is enabled, otherwise
@@ -15,8 +20,6 @@ if (process.contextIsolated) {
     console.error(error)
   }
 } else {
-  // @ts-ignore (define in dts)
   window.electron = electronAPI
-  // @ts-ignore (define in dts)
   window.api = api
 }
