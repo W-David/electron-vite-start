@@ -1,7 +1,4 @@
-<script setup lang="ts">
-import TitleBar from './components/TitleBar.vue'
-import Versions from './components/Versions.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <TitleBar></TitleBar>
